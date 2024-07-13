@@ -22,7 +22,7 @@
       };
       frigate = mksys "frigate" {
         user = "wg";
-      }
+      };
     };
   };
 }
