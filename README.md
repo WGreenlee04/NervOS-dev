@@ -19,5 +19,9 @@ All of the files should be open for extension, but closed for modification. In p
 Frequently, when people stumble onto declarative linux OSes, they are thrown to the wolves. They are suggested to explore massive repositories with minimal documentation on the choices made in each file. This presents a problem: in order to understand the configuration, one must understand the language, and to truly understand the language, you must understand the configurations. In contrast, I intend to provide a beginner friendly entry point with lots of documentation to explore not only the syntax, but my thought process for choosing a given option.
 
 ## Sounds Good, Now Live Up To Your Promises
+**Woah there**, cowboy, good things take time! As of writing this, the repo is in version 0.1.0. I won't make an official release until I am sure everything meets my own standards and your expectations. Along with this, I will include a wiki that should help some less familiar people get aquainted with declarative languages and OS configuration.
 
-(readme in progress)
+## Contact Me. No, Really.
+If you have any questions, concerns, or ransoms to hold against me, send me an email. I am always open to discussion about this repo and the philosphy of software development. The email provided below is my public one, so it might take me a while to sort through the week's ads and other junk before I see your email. I look forward to hearing from you!
+
+greenlee04@gmail.com
