@@ -22,6 +22,6 @@ Frequently, when people stumble onto declarative linux OSes, they are thrown to 
 **Woah there**, cowboy, good things take time! As of writing this, the repo is in version 0.1.0. I won't make an official release until I am sure everything meets my own standards and your expectations. Along with this, I will include a wiki that should help some less familiar people get aquainted with declarative languages and OS configuration.
 
 ## Contact Me. No, Really.
-If you have any questions, concerns, or ransoms to hold against me, send me an email. I am always open to discussion about this repo and the philosphy of software development. The email provided below is my public one, so it might take me a while to sort through the week's ads and other junk before I see your email. I look forward to hearing from you!
+If you have any questions, concerns for my sanity, or ransoms to hold against me, send me an email. I am always open to discussion about this repo and the philosphy of software development. The email provided below is my public one, so it might take me a while to sort through the week's ads and other junk before I see your email. I look forward to hearing from you!
 
 greenlee04@gmail.com
