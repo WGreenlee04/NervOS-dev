@@ -20,6 +20,9 @@
       battleship = mksys "battleship" {
         user = "wg"; # TODO: make this a list
       };
+      frigate = mksys "frigate" {
+        user = "wg";
+      }
     };
   };
 }
