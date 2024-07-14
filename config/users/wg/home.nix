@@ -33,8 +33,8 @@
       };
     };
     starship.enable = true; # shell theme
-    emacs = {
+    neovim = {
       enable = true;
-    }
+    };
   };
 }
