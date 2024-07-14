@@ -1,10 +1,12 @@
 { pkgs, lib, ... }:
 
 {
+  # Custom options
   options = {
     gaming = lib.mkEnableOption "gaming on this host";
   };
 
+  # Common config
   config = {
     nix = {
       settings = {

@@ -8,7 +8,7 @@ let
   home-manager = inputs.home-manager.nixosModules.home-manager;
   agenix = inputs.agenix.nixosModules.age;
   common = ../config/common.nix;
-  syscfg = sys : ../config/hosts/${sys}.nix;
+  syscfg = sys: import ../config/hosts/${sys}.nix;
 in
 lib.attrsets.genAttrs systems (system: 
   lib.nixosSystem {
@@ -16,7 +16,7 @@ lib.attrsets.genAttrs systems (system:
       home-manager
       agenix
       common
-      syscfg system
+      (syscfg system)
     ];
   }
 )
