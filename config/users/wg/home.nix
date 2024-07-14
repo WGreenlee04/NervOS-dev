@@ -26,7 +26,6 @@ user: { pkgs, config, ... }:
       history.path = "$HOME/.cache/zsh_history";
       shellAliases = {
         ll = "ls -la";
-        update = "sudo nixos-rebuild switch";
       };
       oh-my-zsh = {
         enable = true;
