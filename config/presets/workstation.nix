@@ -46,6 +46,6 @@
     };
     greetd = { # login manager for wayland
       enable = true;
-    }
+    };
   };
 }
