@@ -13,6 +13,7 @@
     pkgs.btop
     pkgs.fastfetch
     pkgs.nnn
+    pkgs.thefuck
   ];
 
   # Program Config

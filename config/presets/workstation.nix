@@ -44,5 +44,6 @@
         };
       };
     };
+    xserver.displayManager.gdm.enable = true; # display manager for wayland
   };
 }
