@@ -47,5 +47,8 @@
     greetd = { # login manager for wayland
       enable = true;
     };
+    regreet = { # greeter (login screen) for wayland
+      enable = true;
+    }
   };
 }

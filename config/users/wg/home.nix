@@ -28,13 +28,13 @@
       shellAliases = {
         ll = "ls -la";
       };
-      oh-my-zsh = {
+      oh-my-zsh = { # zsh plugin manager
         enable = true;
         plugins = [ "git" "thefuck" ];
       };
     };
     starship.enable = true; # shell theme
-    neovim = {
+    neovim = { # command line text editor
       enable = true;
     };
   };
