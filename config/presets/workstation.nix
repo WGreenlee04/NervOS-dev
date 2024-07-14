@@ -44,6 +44,8 @@
         };
       };
     };
-    xserver.displayManager.gdm.enable = true; # display manager for wayland
+    greetd = { # login manager for wayland
+      enable = true;
+    }
   };
 }
