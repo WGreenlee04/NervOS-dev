@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ./modules/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../.prefabs/workstation.nix
+    ../../users/wg.nix
   ];
 
-  # host unique information
+  gaming = true;
   networking.hostName = "battleship";
   system.stateVersion = "24.05";
 }

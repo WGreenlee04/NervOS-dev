@@ -1,13 +1,26 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      flake-registry = "";
-    };
-    channel.enable = false;
+  options = {
+    gaming = lib.mkEnableOption "gaming on this host";
   };
-  
-  environment.systemPackages = [ pkgs.git ]; # need git to manage this config
+
+  config = {
+    nix = {
+      settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        flake-registry = "";
+      };
+      channel.enable = false;
+    };
+    
+    environment = {
+      systemPackages = [ pkgs.git ]; # need git to manage this config
+    };
+
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+    };
+  };
 }

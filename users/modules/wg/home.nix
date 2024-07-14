@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   user = "wg";
@@ -11,7 +11,13 @@ in
     stateVersion = "24.05";
   };
 
-  wayland.windowManager.hyprland.enable = true;
+  wayland = {
+    windowManager = {
+      hyprland = {
+        enable = true;
+      };
+    };
+  };
 
   # Packages
   home.packages = [

@@ -10,19 +10,7 @@
     };
   };
 
-  outputs = { ... } @ inputs: 
-  let
-    # Function for constructing systems from components.
-    mksys = import ./lib/mksys.nix inputs;
-  in {  
-    # Special entrypoint for nixos rebuild --flake
-    nixosConfigurations = {
-      battleship = mksys "battleship" {
-        user = "wg"; # TODO: make this a list
-      };
-      frigate = mksys "frigate" {
-        user = "wg";
-      };
-    };
+  outputs = { ... } @ inputs: {
+    nixosConfigurations = import ./lib/mkSystems.nix inputs;
   };
 }

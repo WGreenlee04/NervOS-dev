@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./modules/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../.prefabs/workstation.nix
+    ../../users/wg.nix
   ];
 
-  # host unique information
   networking.hostName = "frigate";
   system.stateVersion = "24.05";
 }

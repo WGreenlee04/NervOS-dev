@@ -6,12 +6,13 @@
   programs = {
     fish.enable = true; # user depends on fish for shell
     steam = { # easiest way to install steam
-      enable = true;
-      remotePlay.openFirewall = true; # open ports for Steam Remote Play
-      dedicatedServer.openFirewall = true; # open ports for Source Dedicated Server
+      enable = config.gaming; # enable it only if the host supports gaming
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
     };
   };
- 
+  
+  # User setup
   users.users.wg = {
     isNormalUser = true;
     extraGroups = [ "wheel" ] 
@@ -19,4 +20,7 @@
     shell = pkgs.fish;
     initialPassword = "";
   };
+
+  # Home Manager
+  home-manager.users.wg = import ./modules/wg/home.nix;
 }

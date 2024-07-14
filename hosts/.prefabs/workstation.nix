@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{ 
+{
   boot = {
     # Use the systemd-boot EFI boot loader.
     loader = {
