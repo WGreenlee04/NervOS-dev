@@ -21,6 +21,9 @@
     hyprland.enable = true; # wayland compositor
     hyprlock.enable = true; # hyprland lock screen
     waybar.enable = true; # wayland taskbar
+    regreet = { # greeter (login screen) for wayland
+      enable = true;
+    };
   };
 
   security = {
@@ -47,8 +50,5 @@
     greetd = { # login manager for wayland
       enable = true;
     };
-    regreet = { # greeter (login screen) for wayland
-      enable = true;
-    }
   };
 }
