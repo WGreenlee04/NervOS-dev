@@ -1,8 +1,5 @@
-{ pkgs, config, ... }:
+user: { pkgs, config, ... }:
 
-let
-  user = "wg";
-in 
 {
   # Basic information
   home = {
