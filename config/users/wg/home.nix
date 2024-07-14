@@ -1,10 +1,10 @@
-user: { pkgs, config, ... }:
+{ pkgs, config, ... }:
 
 {
   # Basic information
   home = {
-    username = user;
-    homeDirectory = "/home/${user}";
+    username = "wg";
+    homeDirectory = "/home/wg";
     stateVersion = "24.05";
   };
 
@@ -33,5 +33,8 @@ user: { pkgs, config, ... }:
       };
     };
     starship.enable = true; # shell theme
+    emacs = {
+      enable = true;
+    }
   };
 }

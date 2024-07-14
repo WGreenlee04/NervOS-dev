@@ -20,5 +20,5 @@
   };
 
   # Home Manager
-  home-manager.users.wg = import ./wg/home.nix "wg";
+  home-manager.users.wg = import ./wg/home.nix;
 }
