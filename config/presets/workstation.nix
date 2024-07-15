@@ -14,6 +14,7 @@ in
 
   environment.systemPackages = [
     pkgs.kitty # hyprland's default terminal emulator
+    pkgs.sddm-chili-theme # theme for sddm
   ];
 
   networking = {
@@ -24,12 +25,6 @@ in
     hyprland.enable = true; # wayland compositor
     hyprlock.enable = true; # hyprland lock screen
     waybar.enable = true; # wayland taskbar
-    regreet = { # greeter (login screen) for wayland
-      enable = true;
-      settings = {
-        background.path = ./workstation/assets/${assets.lockscreen};
-      };
-    };
   };
 
   security = {
@@ -53,8 +48,13 @@ in
         };
       };
     };
-    greetd = { # login manager for wayland
-      enable = true;
+    displayManager = {
+      defaultSession = "hyprland"; # ensures sddm logs into hyprland
+      sddm = { # login screen. uses a different compositor, but works
+        enable = true;
+        wayland.enable = true;
+        theme = "sddm-chili-theme";
+      };
     };
   };
 }
