@@ -1,0 +1,3 @@
+{
+    lockscreen = "lockscreen.png";
+}

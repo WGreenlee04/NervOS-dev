@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 
+let
+  assets = import ./assets.nix;
+in
 {
   # Basic information
   home = {

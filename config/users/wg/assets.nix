@@ -1,0 +1,3 @@
+{
+    wallpaper = "wg-home.png";
+}

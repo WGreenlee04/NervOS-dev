@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  assets = import ./workstation/assets.nix;
+in
 {
   boot = {
     # Use the systemd-boot EFI boot loader.
@@ -23,6 +26,9 @@
     waybar.enable = true; # wayland taskbar
     regreet = { # greeter (login screen) for wayland
       enable = true;
+      settings = {
+        background.path = ./workstation/assets/${assets.lockscreen};
+      };
     };
   };
 
