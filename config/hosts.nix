@@ -1,4 +1,3 @@
 [
     "battleship"
-    "frigate"
 ]
