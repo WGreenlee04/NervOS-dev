@@ -53,7 +53,7 @@ in
       sddm = { # login screen. uses a different compositor, but works
         enable = true;
         wayland.enable = true;
-        theme = "sddm-chili-theme";
+        theme = "chili";
       };
     };
   };
