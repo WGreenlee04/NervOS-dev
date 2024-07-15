@@ -8,12 +8,11 @@
   ];
 
   gaming = true;
-  hardware.nvidia = {
-    modesetting.enable = true; # for wayland compositors
-    open = true; # open kernel module
-    nvidiaSettings = true; # nvidia gui config tool
-    package = config.boot.kernelPackages.nvidiaPackages.stable; 
-  };
+  # hardware.nvidia = {
+  #   modesetting.enable = true; # for wayland compositors
+  #   open = true; # open kernel module
+  #   nvidiaSettings = true; # nvidia gui config tool
+  # };
   networking.hostName = "battleship";
   system.stateVersion = "24.05";
 }
