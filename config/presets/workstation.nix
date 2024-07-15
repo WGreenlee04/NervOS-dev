@@ -49,7 +49,6 @@ in
       };
     };
     displayManager = {
-      defaultSession = "hyprland"; # ensures sddm logs into hyprland
       sddm = { # login screen. uses a different compositor, but works
         enable = true;
         wayland.enable = true;
