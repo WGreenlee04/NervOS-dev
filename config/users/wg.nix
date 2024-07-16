@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true; # user uses unfree packages
+  nixpkgs.config.allowUnfree = true;
  
   programs = {
     steam = { # easiest way to install steam
