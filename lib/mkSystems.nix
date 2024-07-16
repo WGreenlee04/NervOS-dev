@@ -1,22 +1,22 @@
 inputs:
 
 let
-  systems = import ../config/hosts.nix;
+  hosts = import ../config/hosts.nix;
   lib = inputs.nixpkgs.lib;
 
   # Config modules
   home-manager = inputs.home-manager.nixosModules.home-manager;
   agenix = inputs.agenix.nixosModules.age;
   common = ../config/common.nix;
-  syscfg = sys: import ../config/hosts/${sys}.nix;
+  hostConfig = host: import ../config/hosts/${host}.nix;
 in
-lib.attrsets.genAttrs systems (system: 
+lib.attrsets.genAttrs hosts (host: 
   lib.nixosSystem {
     modules = [
       home-manager
       agenix
       common
-      (syscfg system)
+      (hostConfig host)
     ];
   }
 )
