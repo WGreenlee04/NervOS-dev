@@ -4,6 +4,10 @@ let
   assets = import ./assets.nix;
 in
 {
+  imports = [
+    ./modules/default.nix
+  ];
+
   # Basic information
   home = {
     username = "wg";
