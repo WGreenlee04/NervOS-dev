@@ -6,7 +6,7 @@
   ];
 
   modules = {
-    steam.enable = true;
+    steam.enable = config.global.gaming.enable;
   };
   
   # User setup
