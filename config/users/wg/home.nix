@@ -26,20 +26,6 @@ in
     neovim.enable = true; # command line text editor
     starship.enable = true; # shell theme
     waybar.enable = true; # system taskbar
-    vscode.enable = true;
-    zsh = { # shell with plugins
-      enable = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-      history.path = "$HOME/.cache/zsh_history";
-      shellAliases = {
-        ll = "ls -la";
-      };
-      oh-my-zsh = { # zsh plugin manager
-        enable = true;
-        plugins = [ "git" ];
-      };
-    };
-
+    vscode.enable = true; # temporary text editor
   };
 }
