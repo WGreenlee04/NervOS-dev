@@ -1,11 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   options = {
-    modules.steam.enable = true;
+    modules.steam.enable = lib.mkEnableOption "steam";
   };
 
-  config = mkif modules.steam.enable {
+  config = lib.mkIf config.modules.steam.enable {
     nixpkgs.config.allowUnfree = true; # steam is unfree
   
     programs = {

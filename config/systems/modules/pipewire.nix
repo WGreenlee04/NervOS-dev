@@ -1,11 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   options = {
-    modules.pipewire.enable = mkEnableOption "pipewire";
+    modules.pipewire.enable = lib.mkEnableOption "pipewire";
   };
 
-  config = mkif modules.pipewire.enable {
+  config = lib.mkIf config.modules.pipewire.enable {
     security = {
       rtkit.enable = true; # needed for pipewire
     };

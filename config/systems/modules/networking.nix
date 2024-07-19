@@ -1,11 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   options = {
-    modules.networking.enable = mkEnableOption "networking";
+    modules.networking.enable = lib.mkEnableOption "networking";
   };
 
-  config = mkif modules.networking.enable {
+  config = lib.mkIf config.modules.networking.enable {
     networking = {
       networkmanager.enable = true;
     };

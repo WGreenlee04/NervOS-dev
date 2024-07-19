@@ -1,11 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   options = {
-    modules.boot.enable = mkEnableOption "booting";
+    modules.boot.enable = lib.mkEnableOption "booting";
   };
 
-  config = mkif modules.boot.enable {
+  config = lib.mkIf config.modules.boot.enable {
     boot = {
       loader = {
         systemd-boot.enable = true;

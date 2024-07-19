@@ -1,12 +1,12 @@
 # DOCS: https://nixos.wiki/wiki/Nvidia
-{ ... }:
+{ config, lib, ... }:
 
 {
   options = {
-    modules.nvidia.enable = mkEnableOption "nvidia";
+    modules.nvidia.enable = lib.mkEnableOption "nvidia";
   };
 
-  config = mkif modules.nvidia.enable {
+  config = lib.mkIf config.modules.nvidia.enable {
     nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
 
     services.xserver.videoDrivers = ["nvidia"];

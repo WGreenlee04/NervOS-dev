@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   options = {
-    modules.desktop.enable = mkEnableOption "the desktop environment";
+    modules.desktop.enable = lib.mkEnableOption "the desktop environment";
   };
   
-  config = mkif modules.desktop.enable {
+  config = lib.mkIf config.modules.desktop.enable {
     environment.systemPackages = [
       pkgs.kitty # hyprland's default terminal emulator
       pkgs.sddm-chili-theme # theme for sddm
