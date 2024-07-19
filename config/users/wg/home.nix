@@ -11,19 +11,22 @@ in
     stateVersion = "24.05";
   };
 
-  # Packages
+  # Packages that don't need any special wrappers
   home.packages = [
-    pkgs.btop
-    pkgs.fastfetch
     pkgs.nnn
-    pkgs.thefuck
   ];
 
-  # Program Config
+  # Program Config; Takes care of any user-level setup automatically.
   programs = {
-    home-manager.enable = true;
-    firefox.enable = true;
-    zsh = {
+    home-manager.enable = true; # required
+    btop.enable = true; # system resource viewer
+    fastfetch.enable = true; # system configuration display
+    firefox.enable = true; # web browser
+    git.enable = true; # version control
+    neovim.enable = true; # command line text editor
+    starship.enable = true; # shell theme
+    waybar.enable = true; # system taskbar
+    zsh = { # shell with plugins
       enable = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
@@ -33,12 +36,9 @@ in
       };
       oh-my-zsh = { # zsh plugin manager
         enable = true;
-        plugins = [ "git" "thefuck" ];
+        plugins = [ "git" ];
       };
     };
-    starship.enable = true; # shell theme
-    neovim = { # command line text editor
-      enable = true;
-    };
+
   };
 }

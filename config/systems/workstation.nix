@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  assets = import ./workstation/assets.nix;
-in
 {
   boot = {
     # Use the systemd-boot EFI boot loader.
@@ -24,7 +21,6 @@ in
   programs = {
     hyprland.enable = true; # wayland compositor
     hyprlock.enable = true; # hyprland lock screen
-    waybar.enable = true; # wayland taskbar
   };
 
   security = {

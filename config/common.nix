@@ -3,7 +3,9 @@
 {
   # Custom options
   options = {
-    gaming = lib.mkEnableOption "gaming on this host";
+    global = {
+      gaming = lib.mkEnableOption "gaming on this host";
+    };
   };
 
   # Common config
@@ -18,7 +20,7 @@
         automatic = true;
         dates = "weekly";
         options = "--delete-older-than 30d";
-	    };
+      };
     };
     
     environment = {

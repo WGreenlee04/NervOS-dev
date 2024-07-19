@@ -5,7 +5,7 @@
  
   programs = {
     steam = { # easiest way to install steam
-      enable = config.gaming; # enable it if the host supports gaming
+      enable = config.global.gaming; # enable it if the host supports gaming
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
