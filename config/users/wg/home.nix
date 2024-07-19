@@ -7,6 +7,10 @@ in
   imports = [
     ./modules/default.nix
   ];
+  
+  modules = {
+    zsh.enable = true;
+  };
 
   # Basic information
   home = {

@@ -1,12 +1,14 @@
 { pkgs, config, ... }:
 
-{  
+{
   imports = [
     ./modules/default.nix
   ];
 
-  modules.steam.enable = true;
-
+  modules = {
+    steam.enable = true;
+  };
+  
   # User setup
   users.users.wg = {
     isNormalUser = true;
