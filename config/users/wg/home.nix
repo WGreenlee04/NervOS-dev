@@ -26,6 +26,7 @@ in
     neovim.enable = true; # command line text editor
     starship.enable = true; # shell theme
     waybar.enable = true; # system taskbar
+    vscode.enable = true;
     zsh = { # shell with plugins
       enable = true;
       autosuggestion.enable = true;
