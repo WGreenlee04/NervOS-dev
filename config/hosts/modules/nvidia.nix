@@ -2,16 +2,22 @@
 { ... }:
 
 {
-  nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
+  options = {
+    modules.nvidia.enable = mkEnableOption "nvidia";
+  };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  config = mkif modules.nvidia.enable {
+    nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
 
-  hardware.nvidia = {
-    modesetting.enable = true; # necessary for wayland
-    powerManagement.enable = false; # unstable
-    powerManagement.finegrained = false; # unstable
-    open = true; # open kernel module, in alpha
-    nvidiaSettings = true; # settings menu accessible in OS
+    services.xserver.videoDrivers = ["nvidia"];
+
+    hardware.nvidia = {
+      modesetting.enable = true; # necessary for wayland
+      powerManagement.enable = false; # unstable
+      powerManagement.finegrained = false; # unstable
+      open = true; # open kernel module, in alpha
+      nvidiaSettings = true; # settings menu accessible in OS
+    };
   };
 
 }

@@ -1,16 +1,12 @@
 { pkgs, config, ... }:
 
-{
-  nixpkgs.config.allowUnfree = true;
- 
-  programs = {
-    steam = { # easiest way to install steam
-      enable = config.global.gaming; # enable it if the host supports gaming
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-  };
-  
+{  
+  imports = [
+    ./modules/default.nix
+  ];
+
+  modules.steam.enable = true;
+
   # User setup
   users.users.wg = {
     isNormalUser = true;

@@ -4,7 +4,7 @@
   # Custom options
   options = {
     global = {
-      gaming = lib.mkEnableOption "gaming on this host";
+      gaming.enable = lib.mkEnableOption "gaming on this host";
     };
   };
 
