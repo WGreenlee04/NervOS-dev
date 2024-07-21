@@ -27,7 +27,7 @@
       hyprpaper = {
         enable = true; # wallpaper manager
         settings = {
-          preload = ${builtins.toString ../assets/wg-home.jpg};
+          preload = builtins.toString ../assets/wg-home.jpg;
           wallpaper = ",${builtins.toString ../assets/wg-home.jpg}";
         };
       };
