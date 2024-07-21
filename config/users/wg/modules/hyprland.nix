@@ -18,14 +18,14 @@
     };
 
     services = {
-      hyprpaper.enable = true; # wallpaper manager
-      hypridle.enable = true; # idle daemon to put pc to sleep
+      # hyprpaper.enable = true; # wallpaper manager
+      # hypridle.enable = true; # idle daemon to put pc to sleep
       mako.enable = true; # notification manager
     };
 
     # Hyprland config
-    wayland.windowManager.hyprland = {
-      enable = true;
-    };
+    # wayland.windowManager.hyprland = {
+    #   enable = true;
+    # };
   };
 }
