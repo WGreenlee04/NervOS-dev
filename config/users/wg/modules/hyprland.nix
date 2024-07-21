@@ -96,7 +96,7 @@
           "$mainMod, V, togglefloating,"
           #"$mainMod, D, exec, $menu"
           "$mainMod, P, pseudo," # dwindle
-          "$mainMod, J, togglesplit", # dwindle
+          "$mainMod, J, togglesplit," # dwindle
 
           # Move focus with mainMod + arrow keys
           "$mainMod, left, movefocus, l"
