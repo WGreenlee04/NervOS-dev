@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   imports = [
@@ -13,7 +13,7 @@
   users.users.wg = {
     isNormalUser = true;
     extraGroups = [ "wheel" ] 
-    ++ (if config.networking.networkmanager.enable then [ "networkmanager" ] else []);
+    ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
     initialPassword = "";
   };
 

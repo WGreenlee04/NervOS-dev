@@ -6,7 +6,10 @@
   };
   
   config = lib.mkIf config.modules.hyprland.enable {
-    environment.systemPackages = [ pkgs.sddm-chili-theme ]; # theme for sddm
+    environment.systemPackages = [ 
+      pkgs.sddm-chili-theme # theme for sddm
+      pkgs.kitty # QOL: ensures OS can run commands on boot with no extra config
+    ];
 
     programs.hyprland.enable = true; # wayland compositor
 
