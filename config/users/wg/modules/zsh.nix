@@ -5,7 +5,7 @@
     modules.zsh.enable = lib.mkEnableOption "zsh";
   };
 
-  config = lib.mkIf config.modules.steam.enable {
+  config = lib.mkIf config.modules.zsh.enable {
     programs.zsh = { # shell with plugins
       enable = true;
       autosuggestion.enable = true;

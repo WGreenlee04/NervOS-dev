@@ -6,7 +6,7 @@
   ];
 
   modules = {
-    desktop.enable = true;
+    hyprland.enable = true;
     pipewire.enable = true;
     printing.enable = true;
   };

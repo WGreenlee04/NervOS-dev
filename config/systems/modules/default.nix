@@ -3,7 +3,7 @@
 {
   imports = [
     ./boot.nix
-    ./desktop.nix
+    ./hyprland.nix
     ./networking.nix
     ./pipewire.nix
     ./printing.nix

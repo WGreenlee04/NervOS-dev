@@ -9,6 +9,7 @@ in
   ];
   
   modules = {
+    hyprland.enable = true;
     zsh.enable = true;
   };
 
@@ -19,11 +20,6 @@ in
     stateVersion = "24.05";
   };
 
-  # Packages that don't need any special wrappers
-  home.packages = [
-    pkgs.nnn
-  ];
-
   # Program Config; Takes care of any user-level setup automatically.
   programs = {
     home-manager.enable = true; # required
@@ -33,7 +29,6 @@ in
     git.enable = true; # version control
     neovim.enable = true; # command line text editor
     starship.enable = true; # shell theme
-    waybar.enable = true; # system taskbar
     vscode.enable = true; # temporary text editor
   };
 }

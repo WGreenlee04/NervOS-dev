@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.modules.printing.enable {
     services = {
-      printing.enable = true; # printing
+      printing.enable = true;
     };
   };
 }
