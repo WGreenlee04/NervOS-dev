@@ -80,7 +80,7 @@
           disable_hyprland_logo = "true";
         };
         input = {
-          kb_layout = us;
+          kb_layout = "us";
         };
 
         # KEYBINDS #
