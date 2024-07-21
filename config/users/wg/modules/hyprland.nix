@@ -48,9 +48,9 @@
           gaps_in="8";
           gaps_out="15";
           border_size="5";
-          col.active_border = "rgba(edd1f5e7)";
-          col.inactive_border = "rgba(3422435a)";
-          resize_on_boarder = "true";
+          "col.active_border" = "rgba(edd1f5e7)";
+          "col.inactive_border" = "rgba(3422435a)";
+          resize_on_border = "true";
           extend_border_grab_area = "10";
         };
         decoration = {
@@ -70,11 +70,11 @@
         };
 
         dwindle = {
-            pseudotile = "true";
-            preserve_split = "true";
+          pseudotile = "true";
+          preserve_split = "true";
         };
         master = {
-          new_is_master = "true";
+          new_status = "master";
         };
         misc = { 
           disable_hyprland_logo = "true";
