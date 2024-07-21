@@ -10,6 +10,7 @@ in
   
   modules = {
     hyprland.enable = true;
+    vscode.enable = true;
     zsh.enable = true;
   };
 
@@ -29,6 +30,5 @@ in
     git.enable = true; # version control
     neovim.enable = true; # command line text editor
     starship.enable = true; # shell theme
-    vscode.enable = true; # temporary text editor
   };
 }
