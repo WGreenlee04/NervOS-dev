@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../_modules/default.nix
+    ../_modules
   ];
   
   modules = {

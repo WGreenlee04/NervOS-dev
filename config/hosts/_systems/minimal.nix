@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../_modules/default.nix
+    ../_modules
   ];
 
   modules = {
