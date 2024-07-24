@@ -43,7 +43,7 @@
         "$terminal" = "kitty";
         "$fileManager" = "dolphin";
         "$taskbar" = "waybar";
-        exec-once = [ "$taskbar" "mako" "hyprpaper" ];
+        exec-once = [ "$taskbar" "hyprpaper" "mako" ];
         general = {
           gaps_in="8";
           gaps_out="15";
