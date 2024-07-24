@@ -10,5 +10,5 @@
   };
 
   # Home Manager
-  home-manager.users.wg = ./wg/home.nix;
+  home-manager.users.wg = ./home/wg/home.nix;
 }
