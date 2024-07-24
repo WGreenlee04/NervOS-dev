@@ -1,3 +1,5 @@
-{
-    wallpaper = "wg-home.png";
+let
+    assets = ./assets;
+in {
+    wallpapers = [ ${assets}/wg-home.png ];
 }
