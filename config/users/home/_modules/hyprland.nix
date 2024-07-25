@@ -27,8 +27,8 @@
       hyprpaper = {
         enable = true; # wallpaper manager
         settings = {
-          preload = builtins.toString ../assets/wg-home.jpg;
-          wallpaper = ",${builtins.toString ../assets/wg-home.jpg}";
+          preload = ../assets/wg-home.jpg;
+          wallpaper = ",${./assets/wg-home.jpg}";
         };
       };
       # hypridle.enable = true; # idle daemon to put pc to sleep
