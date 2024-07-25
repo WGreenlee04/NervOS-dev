@@ -27,5 +27,9 @@ in
     stateVersion = "24.05";
   };
 
+  home.packages = [
+    pkgs.unzip
+  ];
+
   programs.home-manager.enable = true;
 }

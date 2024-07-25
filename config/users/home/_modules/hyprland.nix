@@ -8,9 +8,8 @@
   config = lib.mkIf config.modules.hyprland.enable {
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland
-      pkgs.libsForQt5.polkit-kde-agent # elevation agent
+      pkgs.kdePackages.polkit-kde-agent-1 # elevation agent
       pkgs.kdePackages.dolphin # file manager
-      pkgs.xdg-desktop-portal-hyprland # desktop portal
     ];
 
     programs = {
@@ -21,6 +20,7 @@
           shell = "zsh";
         };
       };
+      tofi.enable = true; # dmenu
       waybar.enable = true; # system taskbar
     };
 
@@ -44,7 +44,8 @@
         "$terminal" = "kitty";
         "$fileManager" = "dolphin";
         "$taskbar" = "waybar";
-        exec-once = [ "$taskbar" "hyprpaper" "mako" ];
+        "$menu" = "tofi";
+        exec-once = [ "$taskbar" "hyprpaper" "mako" "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1" ];
         general = {
           gaps_in = "8";
           gaps_out = "15";
@@ -95,7 +96,7 @@
           "$mainMod, ESC, exit,"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating,"
-          #"$mainMod, D, exec, $menu"
+          "$mainMod, D, exec, $menu"
           "$mainMod, P, pseudo," # dwindle
           "$mainMod, J, togglesplit," # dwindle
 
