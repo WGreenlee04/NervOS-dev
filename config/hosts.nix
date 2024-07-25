@@ -1,3 +1,3 @@
 [
-    "battleship"
+  "battleship"
 ]

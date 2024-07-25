@@ -39,15 +39,15 @@
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        monitor="DP-1,1920x1080@144,0x0,1";
+        monitor = "DP-1,1920x1080@144,0x0,1";
         "$terminal" = "kitty";
         "$fileManager" = "dolphin";
         "$taskbar" = "waybar";
         exec-once = [ "$taskbar" "hyprpaper" "mako" ];
         general = {
-          gaps_in="8";
-          gaps_out="15";
-          border_size="5";
+          gaps_in = "8";
+          gaps_out = "15";
+          border_size = "5";
           "col.active_border" = "rgba(edd1f5e7)";
           "col.inactive_border" = "rgba(3422435a)";
           resize_on_border = "true";
@@ -76,7 +76,7 @@
         master = {
           new_status = "master";
         };
-        misc = { 
+        misc = {
           disable_hyprland_logo = "true";
         };
         input = {
@@ -88,7 +88,7 @@
         "$shiftMod" = "SHIFT";
 
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-        bind = [ 
+        bind = [
           "$mainMod, Q, exec, $terminal"
           "$mainMod, C, killactive,"
           "$mainMod, ESC, exit,"
@@ -137,7 +137,7 @@
           "$mainMod, mouse_up, workspace, e-1"
         ];
 
-        
+
         bindm = [
           # Move/resize windows with mainMod + LMB/RMB and dragging
           "$mainMod, mouse:272, movewindow"

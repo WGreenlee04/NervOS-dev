@@ -1,5 +1,6 @@
 let
-    assets = ./assets;
-in {
-    wallpapers = [ ${assets}/wg-home.png ];
+  assets = ./assets;
+in
+{
+  wallpapers = [ ${assets}/wg-home.png ];
 }

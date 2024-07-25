@@ -9,7 +9,7 @@
   config = lib.mkIf config.modules.nvidia.enable {
     nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
 
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.nvidia = {
       modesetting.enable = true; # necessary for wayland

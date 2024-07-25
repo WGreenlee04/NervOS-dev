@@ -13,7 +13,7 @@
       options = "--delete-older-than 10d";
     };
   };
-  
+
   environment = {
     systemPackages = [ pkgs.git ]; # need git to manage this config
   };

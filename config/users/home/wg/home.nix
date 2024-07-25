@@ -7,7 +7,7 @@ in
   imports = [
     ../_modules
   ];
-  
+
   modules = {
     btop.enable = true;
     fastfetch.enable = true;

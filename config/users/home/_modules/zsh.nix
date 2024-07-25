@@ -6,7 +6,8 @@
   };
 
   config = lib.mkIf config.modules.zsh.enable {
-    programs.zsh = { # shell with plugins
+    programs.zsh = {
+      # shell with plugins
       enable = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
@@ -14,7 +15,8 @@
       shellAliases = {
         ll = "ls -la";
       };
-      oh-my-zsh = { # zsh plugin manager
+      oh-my-zsh = {
+        # zsh plugin manager
         enable = true;
         plugins = [ "git" ];
       };

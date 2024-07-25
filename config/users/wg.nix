@@ -4,8 +4,8 @@
   # User setup
   users.users.wg = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ] 
-    ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
+    extraGroups = [ "wheel" ]
+      ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
     initialPassword = "";
   };
 
