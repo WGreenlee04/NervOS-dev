@@ -10,6 +10,7 @@
       pkgs.hyprpicker # color picker for hyprland
       pkgs.libsForQt5.polkit-kde-agent # elevation agent
       pkgs.kdePackages.dolphin # file manager
+      pkgs.xdg-desktop-portal-hyprland # desktop portal
     ];
 
     programs = {
