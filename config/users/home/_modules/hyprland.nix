@@ -144,7 +144,11 @@
           "$mainMod, mouse:273, resizewindow"
         ];
 
-        windowrulev2 = "suppressevent maximize, class:.*";
+        # These make the behavior of apps more predictable
+        windowrulev2 = [
+          "suppressevent maximize, class:.*"
+          "suppressevent fullscreen, class:.*"
+        ];
       };
     };
   };
