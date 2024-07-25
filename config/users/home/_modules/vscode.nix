@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.modules.vscode.enable {
-    home.packages = [ pkgs.nixfmt-rfc-style ];
+    home.packages = [ pkgs.nixpkgs-fmt ];
     programs.vscode = {
       enable = true; # temporary text editor
       extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ];
