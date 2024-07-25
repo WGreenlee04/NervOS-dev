@@ -10,6 +10,9 @@
     programs.vscode = {
       enable = true; # temporary text editor
       extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ];
+      userSettings = {
+        "editor.formatOnSave" = "true";
+      };
     };
   };
 }
