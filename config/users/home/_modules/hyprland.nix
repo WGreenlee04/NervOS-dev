@@ -3,7 +3,7 @@
 {
   options = {
     modules.hyprland.enable = lib.mkEnableOption "hyprland";
-    modules.hyprland.wallpapers = lib.mkOption { default = null; type = lib.types.listOf str; };
+    modules.hyprland.wallpapers = lib.mkOption { default = null; type = "listOf str"; };
   };
 
   config = lib.mkIf config.modules.hyprland.enable {
