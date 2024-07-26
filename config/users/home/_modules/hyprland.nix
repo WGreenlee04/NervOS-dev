@@ -17,6 +17,8 @@ in
       pkgs.swww # wallpaper manager
     ];
 
+    home.sessionVariables = { CURRENT_WALLPAPER = 0; };
+
     programs = {
       hyprlock.enable = true; # hyprland lock screen
       kitty = {
