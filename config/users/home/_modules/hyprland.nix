@@ -13,7 +13,7 @@ in
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland
       pkgs.kdePackages.polkit-kde-agent-1 # elevation agent
-      pkgs.kdePackages.dolphin # file manager
+      pkgs.pcmanfm # file manager
       pkgs.swww # wallpaper manager
     ];
 
