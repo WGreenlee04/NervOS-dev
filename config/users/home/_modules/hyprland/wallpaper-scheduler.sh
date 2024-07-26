@@ -6,14 +6,25 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
+# Temporary file to store current wallpaper index
+TEMP_FILE="~/.cache/cwi"
+
+# Initialize current wallpaper index or reset it to 0
+if [ ! -f "$TEMP_FILE" ]; then
+    echo 0 > "$TEMP_FILE"
+fi
+
 # Read images into an array
 images=("$@")
 
 # This controls (in seconds) when to switch to the next image
-INTERVAL=10
+INTERVAL=30
 
 while true; do
-    while [[ $CURRENT_WALLPAPER -lt ${#images[@]} ]]; do
+    # Read current wallpaper index from the temp file
+    CURRENT_WALLPAPER=$(cat "$TEMP_FILE")
+
+    while [ $CURRENT_WALLPAPER -lt ${#images[@]} ]; do
         swww img "${images[$CURRENT_WALLPAPER]}" \
             --transition-type random \
             --transition-step 1 \
@@ -21,8 +32,12 @@ while true; do
             --transition-fps 144 \
             --filter Nearest
         sleep "$INTERVAL"
+
+        # Increment current wallpaper index and save back to temp file
         CURRENT_WALLPAPER=$(($CURRENT_WALLPAPER + 1))
+        echo $CURRENT_WALLPAPER > "$TEMP_FILE"
     done
-    # Reset TEMP to 0 to loop through images again
-    CURRENT_WALLPAPER=0
+
+    # Reset index to loop through images again
+    echo 0 > "$TEMP_FILE"
 done
