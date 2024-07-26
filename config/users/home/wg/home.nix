@@ -13,7 +13,10 @@ in
     fastfetch.enable = true;
     firefox.enable = true;
     git.enable = true;
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      wallpapers = assets.wallpapers;
+    };
     neovim.enable = true;
     starship.enable = true;
     vscode.enable = true;

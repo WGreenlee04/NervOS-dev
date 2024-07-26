@@ -1,16 +1,20 @@
 { pkgs, config, lib, ... }:
 
+let
+  module = config.modules.hyprland;
+in
 {
-  options = {
-    modules.hyprland.enable = lib.mkEnableOption "hyprland";
-    modules.hyprland.wallpapers = lib.mkOption { default = null; type = "listOf str"; };
+  options.modules.hyprland = {
+    enable = lib.mkEnableOption "hyprland";
+    wallpapers = lib.mkOption { default = null; type = lib.types.listOf lib.types.str; };
   };
 
-  config = lib.mkIf config.modules.hyprland.enable {
+  config = lib.mkIf module.enable {
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland
       pkgs.kdePackages.polkit-kde-agent-1 # elevation agent
       pkgs.kdePackages.dolphin # file manager
+      pkgs.swww # wallpaper manager
     ];
 
     programs = {
@@ -26,13 +30,6 @@
     };
 
     services = {
-      hyprpaper = {
-        enable = true; # wallpaper manager
-        settings = {
-          preload = builtins.toString ../wg/assets/wg-home.jpg;
-          wallpaper = ",${builtins.toString ../wg/assets/wg-home.jpg}";
-        };
-      };
       # hypridle.enable = true; # idle daemon to put pc to sleep
       mako.enable = true; # notification manager
     };
@@ -46,7 +43,12 @@
         "$fileManager" = "dolphin";
         "$taskbar" = "waybar";
         "$menu" = "tofi";
-        exec-once = [ "$taskbar" "hyprpaper" "mako" "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1" ];
+        exec-once = [
+          "$taskbar"
+          "mako"
+          "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1"
+        ]
+        ++ lib.optionals (!builtins.isNull module.wallpapers) [ "swww-daemon" "${./hyprland/wallpaper-scheduler.sh} ${lib.strings.concatStringsSep " " module.wallpapers}" ];
         general = {
           gaps_in = "8";
           gaps_out = "15";
