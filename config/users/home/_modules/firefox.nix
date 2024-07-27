@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.modules.NAME;
+  cfg = config.modules.firefox;
 in
 {
   options.modules.firefox = {

@@ -1,7 +1,9 @@
 { pkgs, config, lib, ... }:
 
 let
-  module = config.modules.hyprland;
+  cfg = config.modules.hyprland;
+  wallpaper-switcher-script = ./hyprland/wallpaper-switcher.sh;
+  wallpaper-scheduler-script = ./hyprland/wallpaper-scheduler.sh;
 in
 {
   options.modules.hyprland = {
@@ -9,15 +11,17 @@ in
     wallpapers = lib.mkOption { default = null; type = lib.types.listOf lib.types.str; };
   };
 
-  config = lib.mkIf module.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland
       pkgs.kdePackages.polkit-kde-agent-1 # elevation agent
       pkgs.pcmanfm # file manager
       pkgs.swww # wallpaper manager
+      pkgs.watershot # screenshot utility
+      pkgs.xorg.xlsclients # list apps using xwayland
     ];
 
-    home.sessionVariables = { CURRENT_WALLPAPER = 0; };
+    home.sessionVariables.NIXOS_OZONE_WL = "1";
 
     programs = {
       hyprlock.enable = true; # hyprland lock screen
@@ -40,30 +44,35 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        monitor = "DP-1,1920x1080@144,0x0,1";
-        "$terminal" = "kitty";
         "$fileManager" = "pcmanfm";
         "$taskbar" = "waybar";
+        "$terminal" = "kitty";
         "$menu" = "tofi";
+        "$notification-daemon" = "mako";
+        "$screenshot-util" = "watershot --copy";
+        monitor = "DP-1,1920x1080@144,0x0,1";
         exec-once = [
           "$taskbar"
-          "mako"
+          "$notification-daemon"
           "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1"
         ]
-        ++ lib.optionals (!builtins.isNull module.wallpapers) [ "swww-daemon" "${./hyprland/wallpaper-scheduler.sh} ${./hyprland/wallpaper-switcher.sh} ${lib.strings.concatStringsSep " " module.wallpapers}" ];
+        ++ lib.optionals (!builtins.isNull cfg.wallpapers) [
+          "swww-daemon"
+          "${wallpaper-scheduler-script} ${wallpaper-switcher-script} ${lib.strings.concatStringsSep " " cfg.wallpapers}"
+        ];
         general = {
-          gaps_in = "8";
-          gaps_out = "15";
-          border_size = "5";
-          "col.active_border" = "rgba(edd1f5e7)";
+          gaps_in = "5";
+          gaps_out = "10";
+          border_size = "2";
+          "col.active_border" = "rgba(ed9f0ed9)";
           "col.inactive_border" = "rgba(3422435a)";
           resize_on_border = "true";
           extend_border_grab_area = "10";
         };
         decoration = {
-          rounding = "15";
-          shadow_range = "10";
-          shadow_render_power = "4";
+          rounding = "10";
+          shadow_range = "15";
+          shadow_render_power = "3";
           blur = {
             xray = "true";
             size = "12";
@@ -101,7 +110,9 @@ in
           "$mainMod, ESC, exit,"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating,"
+          "$mainMod, F, fullscreen, 0"
           "$mainMod, D, exec, $menu"
+          "$mainMod, X, exec, $screenshot-util"
           "$mainMod, P, pseudo," # dwindle
           "$mainMod, J, togglesplit," # dwindle
 
