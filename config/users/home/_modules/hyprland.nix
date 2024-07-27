@@ -50,7 +50,7 @@ in
           "mako"
           "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1"
         ]
-        ++ lib.optionals (!builtins.isNull module.wallpapers) [ "swww-daemon" "${./hyprland/wallpaper-scheduler.sh} ${lib.strings.concatStringsSep " " module.wallpapers}" ];
+        ++ lib.optionals (!builtins.isNull module.wallpapers) [ "swww-daemon" "${./hyprland/wallpaper-scheduler.sh} ${./hyprland/wallpaper-switcher.sh} ${lib.strings.concatStringsSep " " module.wallpapers}" ];
         general = {
           gaps_in = "8";
           gaps_out = "15";
