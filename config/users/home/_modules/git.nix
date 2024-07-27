@@ -1,11 +1,14 @@
 { config, lib, ... }:
 
+let
+  cfg = config.modules.git;
+in
 {
-  options = {
-    modules.git.enable = lib.mkEnableOption "git";
+  options.modules.git = {
+    enable = lib.mkEnableOption "git";
   };
 
-  config = lib.mkIf config.modules.git.enable {
+  config = lib.mkIf cfg.enable {
     programs.git.enable = true; # version control
   };
 }

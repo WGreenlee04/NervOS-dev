@@ -1,11 +1,14 @@
 { config, lib, ... }:
 
+let
+  cfg = config.modules.fastfetch;
+in
 {
-  options = {
-    modules.fastfetch.enable = lib.mkEnableOption "fastfetch";
+  options.modules.fastfetch = {
+    enable = lib.mkEnableOption "fastfetch";
   };
 
-  config = lib.mkIf config.modules.fastfetch.enable {
+  config = lib.mkIf cfg.enable {
     programs.fastfetch.enable = true; # system configuration display
   };
 }
