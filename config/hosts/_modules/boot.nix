@@ -1,11 +1,14 @@
 { config, lib, ... }:
 
+let
+  cfg = config.modules.boot;
+in
 {
-  options = {
-    modules.boot.enable = lib.mkEnableOption "booting";
+  options.modules.boot = {
+    enable = lib.mkEnableOption "booting";
   };
 
-  config = lib.mkIf config.modules.boot.enable {
+  config = lib.mkIf cfg.enable {
     boot = {
       loader = {
         systemd-boot.enable = true;

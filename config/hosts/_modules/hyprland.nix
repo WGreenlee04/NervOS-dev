@@ -1,11 +1,14 @@
 { config, lib, pkgs, ... }:
 
+let
+  cfg = config.modules.hyprland;
+in
 {
-  options = {
-    modules.hyprland.enable = lib.mkEnableOption "hyprland";
+  options.modules.hyprland = {
+    enable = lib.mkEnableOption "hyprland";
   };
 
-  config = lib.mkIf config.modules.hyprland.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.sddm-chili-theme # theme for sddm
       pkgs.kitty # QOL: ensures OS can run commands on boot with no extra config

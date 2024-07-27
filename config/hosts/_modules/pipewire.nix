@@ -1,11 +1,14 @@
 { config, lib, ... }:
 
+let
+  cfg = config.modules.pipewire;
+in
 {
-  options = {
-    modules.pipewire.enable = lib.mkEnableOption "pipewire";
+  options.modules.pipewire = {
+    enable = lib.mkEnableOption "pipewire";
   };
 
-  config = lib.mkIf config.modules.pipewire.enable {
+  config = lib.mkIf cfg.enable {
     security = {
       rtkit.enable = true; # needed for pipewire
     };
