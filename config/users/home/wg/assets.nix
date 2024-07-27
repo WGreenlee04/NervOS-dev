@@ -3,11 +3,10 @@ let
 in
 {
   wallpapers = [
-    "${assets}/1.gif"
-    "${assets}/2.gif"
-    "${assets}/3.gif"
-    "${assets}/4.gif"
-    "${assets}/5.gif"
-    "${assets}/6.gif"
+    "${assets}/1.png"
+    "${assets}/2.png"
+    "${assets}/3.jpg"
+    "${assets}/4.png"
+    "${assets}/5.jpg"
   ];
 }
