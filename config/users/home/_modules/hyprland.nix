@@ -20,10 +20,7 @@ in
       pkgs.watershot # screenshot utility
       pkgs.webcord-vencord # discord with extensionsz
       pkgs.xorg.xlsclients # list apps using xwayland
-      pkgs.nerdfonts # well rounded font pack
     ];
-
-    fonts.fontconfig.enable = true; # allow font package discovery from home.packages
 
     home.sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
 
