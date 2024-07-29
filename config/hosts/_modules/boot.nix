@@ -15,7 +15,7 @@ in
           enable = true; # universal boot loader for x86
           efiSupport = true; # install as an efi bootloader
           useOSProber = true; # detect other boot options (like a Windows installation)
-          splashImage = ../assets/nervos-splash.png; # appears on menu screen
+          splashImage = ../_assets/nervos-splash.png; # appears on menu screen
           memtest86.enable = true; # add mem test as a boot option
         };
         efi.canTouchEfiVariables = true; # allows installer to change efi variables (to enable boot options)
