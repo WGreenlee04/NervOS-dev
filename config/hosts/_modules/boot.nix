@@ -24,6 +24,7 @@ in
       tmp.cleanOnBoot = true; # helps cut down on disk usage, tmp is safe to clean at boot
       plymouth = {
         enable = true; # flicker-free splash screen
+        theme = "spinner";
         logo = ../_assets/nervos-splash.png; # logo to be displayed
       };
     };
