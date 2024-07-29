@@ -9,6 +9,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    networking.networkmanager.enable = true;
+    networking.networkmanager.enable = true; # enables dynamic network config handling
   };
 }

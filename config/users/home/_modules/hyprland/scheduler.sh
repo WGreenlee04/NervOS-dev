@@ -23,12 +23,6 @@ INTERVAL=300
 while true; do
     # Call the script at the path provided in the args and pass in the images
     "$SWITCH_SCRIPT" "${images[@]}"
-    
-    # Check if the switch script ran successfully
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to execute switch script '$SWITCH_SCRIPT'."
-        exit 1
-    fi
 
     # Sleep for the specified interval
     sleep "$INTERVAL"

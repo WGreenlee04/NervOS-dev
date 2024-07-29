@@ -13,13 +13,13 @@ in
 
     programs = {
       steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        localNetworkGameTransfers.openFirewall = true;
+        enable = true; # install steam
+        remotePlay.openFirewall = true; # open ports for remote play
+        dedicatedServer.openFirewall = true; # open ports for steam server
+        localNetworkGameTransfers.openFirewall = true; # open ports for local transfers
       };
     };
 
-    hardware.steam-hardware.enable = true;
+    hardware.steam-hardware.enable = true; # support for valve hardware (steam controller/valve index)
   };
 }

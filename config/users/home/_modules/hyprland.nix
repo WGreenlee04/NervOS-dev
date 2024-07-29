@@ -2,8 +2,8 @@
 
 let
   cfg = config.modules.hyprland;
-  wallpaper-switcher-script = ./hyprland/wallpaper-switcher.sh;
-  wallpaper-scheduler-script = ./hyprland/wallpaper-scheduler.sh;
+  wallpaper-switcher-script = ./hyprland/switcher.sh;
+  wallpaper-scheduler-script = ./hyprland/scheduler.sh;
 in
 {
   options.modules.hyprland = {
@@ -18,10 +18,11 @@ in
       pkgs.pcmanfm # file manager
       pkgs.swww # wallpaper manager
       pkgs.watershot # screenshot utility
+      pkgs.webcord-vencord # discord with extensionsz
       pkgs.xorg.xlsclients # list apps using xwayland
     ];
 
-    home.sessionVariables.NIXOS_OZONE_WL = "1";
+    home.sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
 
     programs = {
       hyprlock.enable = true; # hyprland lock screen
@@ -44,6 +45,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
+        "$browser" = "firefox";
         "$fileManager" = "pcmanfm";
         "$taskbar" = "waybar";
         "$terminal" = "kitty";
@@ -109,6 +111,7 @@ in
           "$mainMod, C, killactive,"
           "$mainMod, ESC, exit,"
           "$mainMod, E, exec, $fileManager"
+          "$mainMod, B, exec, $browser"
           "$mainMod, V, togglefloating,"
           "$mainMod, F, fullscreen, 0"
           "$mainMod, D, exec, $menu"

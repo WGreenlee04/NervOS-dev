@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # Add modules here for easy importing
   imports = [
     ./boot.nix
     ./hyprland.nix

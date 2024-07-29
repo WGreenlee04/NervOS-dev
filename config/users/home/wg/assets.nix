@@ -1,5 +1,5 @@
 let
-  assets = ./assets;
+  assets = ./_assets;
 in
 {
   wallpapers = [

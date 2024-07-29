@@ -1,3 +1,4 @@
+# Root level configuration for the Hyprland desktop
 { config, lib, pkgs, ... }:
 
 let
@@ -9,18 +10,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.sddm-chili-theme # theme for sddm
-      pkgs.kitty # QOL: ensures OS can run commands on boot with no extra config
-    ];
+    environment.systemPackages = [ pkgs.kitty ]; # quality of life: terminal which works by default
 
-    programs.hyprland.enable = true; # wayland compositor
+    programs.hyprland.enable = true; # takes care of root level config
 
     services.displayManager.sddm = {
-      # login screen. uses a different compositor, but works
-      enable = true;
-      wayland.enable = true;
-      theme = "chili";
+      enable = true; # lock screen compatible with hyprland
+      wayland.enable = true; # native wayland support
+      extraPackages = [ pkgs.sddm-chili-theme ]; # grey (neutral) theme for lock screen
+      theme = "chili"; # enable the previously declared theme
     };
   };
 }

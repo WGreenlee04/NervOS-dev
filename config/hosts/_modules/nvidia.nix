@@ -12,7 +12,7 @@ in
   config = lib.mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
 
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = [ "nvidia" ]; # set driver for compositor
 
     hardware.nvidia = {
       modesetting.enable = true; # necessary for wayland
