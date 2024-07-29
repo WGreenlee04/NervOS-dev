@@ -9,6 +9,46 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.fastfetch.enable = true; # system configuration display
+    programs.fastfetch = {
+      enable = true; # system configuration display
+      settings = {
+        logo = {
+          padding = {
+            top = 2;
+          };
+        };
+        modules = [
+          "title"
+          "separator"
+          "os"
+          "bootmgr"
+          "kernel"
+          "initsystem"
+          "uptime"
+          "processes"
+          "packages"
+          "shell"
+          "display"
+          "monitor"
+          "lm"
+          "de"
+          "wm"
+          "wmtheme"
+          "theme"
+          "icons"
+          "font"
+          "cursor"
+          "terminal"
+          "terminalfont"
+          "terminaltheme"
+          "player"
+          "media"
+          "users"
+          "version"
+          "break"
+          "colors"
+        ];
+      };
+    };
   };
 }
