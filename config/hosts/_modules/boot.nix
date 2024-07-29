@@ -17,6 +17,7 @@ in
           useOSProber = true; # detect other boot options (like a Windows installation)
           splashImage = ../_assets/nervos-splash.png; # appears on menu screen
           memtest86.enable = true; # add mem test as a boot option
+          device = "nodev";
         };
         efi.canTouchEfiVariables = true; # allows installer to change efi variables (to enable boot options)
       };
