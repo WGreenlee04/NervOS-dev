@@ -16,9 +16,9 @@ in
       pkgs.fira-code-symbols
       pkgs.font-awesome
       pkgs.nerdfonts
-      noto-fonts
-      noto-fonts-emoji
-      proggyfonts
+      pkgs.noto-fonts
+      pkgs.noto-fonts-emoji
+      pkgs.proggyfonts
     ];
   };
 }
