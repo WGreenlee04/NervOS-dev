@@ -10,14 +10,16 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.kitty ]; # quality of life: terminal which works by default
+    environment.systemPackages = [
+      pkgs.kitty # quality of life: terminal which works by default
+      pkgs.sddm-chili-theme # grey (neutral) theme for lock screen
+    ];
 
     programs.hyprland.enable = true; # takes care of root level config
 
     services.displayManager.sddm = {
       enable = true; # lock screen compatible with hyprland
       wayland.enable = true; # native wayland support
-      extraPackages = [ pkgs.sddm-chili-theme ]; # grey (neutral) theme for lock screen
       theme = "chili"; # enable the previously declared theme
     };
   };
