@@ -19,7 +19,7 @@ in
         truecolor = true;
 
         #* Rounded corners on boxes, is ignored if TTY mode is ON.
-        rounded_corners = True;
+        rounded_corners = true;
 
         #* Manually set which boxes to show. Available values are "cpu mem net proc" and "gpu0" through "gpu5", separate values with whitespace.
         shown_boxes = "proc cpu mem net gpu0";
@@ -28,57 +28,57 @@ in
         update_ms = 1000;
 
         #* Show processes as a tree.
-        proc_tree = True;
+        proc_tree = true;
 
         #* Use the cpu graph colors in the process list.
-        proc_colors = True;
+        proc_colors = true;
 
         #* Use a darkening gradient in the process list.
-        proc_gradient = True;
+        proc_gradient = true;
 
         #* Shows the system uptime in the CPU box.
-        show_uptime = True;
+        show_uptime = true;
 
         #* Show cpu temperature.
-        check_temp = True;
+        check_temp = true;
 
         #* Show temperatures for cpu cores also if check_temp is True and sensors has been found.
-        show_coretemp = True;
+        show_coretemp = true;
 
         #* Show CPU frequency.
-        show_cpu_freq = True;
+        show_cpu_freq = true;
 
         #* Draw a clock at top of screen, formatting according to strftime, empty string to disable.
         #* Special formatting: /host = hostname | /user = username | /uptime = system uptime
         clock_format = "%H:%M";
 
         #* Update main ui in background when menus are showing, set this to false if the menus is flickering too much for comfort.
-        background_update = True;
+        background_update = true;
 
         #* Optional filter for shown disks, should be full path of a mountpoint, separate multiple values with whitespace " ".
         #* Begin line with "exclude=" to change to exclude filter, otherwise defaults to "most include" filter. Example: disks_filter="exclude=/boot /home/user".
         disks_filter = "exclude=/boot";
 
         #* Show graphs instead of meters for memory values.
-        mem_graphs = True;
+        mem_graphs = true;
 
         #* If swap memory should be shown in memory box.
-        show_swap = True;
+        show_swap = true;
 
         #* Show swap as a disk, ignores show_swap value above, inserts itself after first disk.
-        swap_disk = False;
+        swap_disk = false;
 
         #* If mem box should be split to also show disks info.
-        show_disks = True;
+        show_disks = true;
 
         #* Set to true to show available disk space for privileged users.
-        disk_free_priv = True;
+        disk_free_priv = true;
 
         #* Toggles if io activity % (disk busy time) should be shown in regular disk usage view.
-        show_io_stat = True;
+        show_io_stat = true;
 
         #* Show battery stats in top right if battery is present.
-        show_battery = True;
+        show_battery = true;
 
         #* Which battery to use if multiple are present. "Auto" for auto detection.
         selected_battery = "Auto";
