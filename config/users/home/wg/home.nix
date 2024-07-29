@@ -12,6 +12,7 @@ in
     btop.enable = true;
     fastfetch.enable = true;
     firefox.enable = true;
+    fonts.enable = true;
     git.enable = true;
     hyprland = {
       enable = true;
