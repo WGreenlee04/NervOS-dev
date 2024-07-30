@@ -1,6 +1,6 @@
 # NervOS: Configuration Designed for Reuse 
 ### (Start Here!)
-![A brain computer interface, the theme image for the NervOS repository.](https://github.com/WGreenlee04/NervOS/blob/main/nervos.avif)
+![A brain computer interface, the theme image for the NervOS repository.](https://github.com/WGreenlee04/NervOS/blob/main/assets/nervos.avif)
 
 Hey, it's me, the guy who took a software engineering class and developed a cripling obsession with reusability and modularity in the software I write.<sup>1</sup> If the language supports it, I implement systems of reuse wherever I can. As it turns out, Nix is one of those languages! As I explored the countless public configurations on the internet, I started to realize that it was difficult to copy and paste things from other configs into my own without **modifying components** (insert spooky music here). This project, and the resulting config, was my attempt to help fix that issue, and give people a quality set of components that they can reuse in their own configs.
 
