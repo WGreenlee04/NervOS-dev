@@ -1,7 +1,14 @@
 { pkgs, config, ... }:
 
 let
-  assets = import ./assets.nix;
+  assets = ./_assets;
+  wallpapers = [
+    "${assets}/1.png"
+    "${assets}/2.png"
+    "${assets}/3.jpg"
+    "${assets}/4.png"
+    "${assets}/5.jpg"
+  ];
 in
 {
   imports = [
