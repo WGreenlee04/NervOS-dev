@@ -14,10 +14,11 @@ in
       settings = {
         logo = {
           padding = {
-            top = 2;
+            top = 2; # center the logo vertically
           };
         };
         modules = [
+          # components of the output
           "title"
           "separator"
           "os"

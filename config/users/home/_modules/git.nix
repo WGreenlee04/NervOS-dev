@@ -13,7 +13,16 @@ in
       git = {
         enable = true; # version control
         delta.enable = true; # diff tool
-        aliases = { }; # place to add commits # TODO: expose this
+        aliases = {
+          c = "commit";
+          ca = "commit --amend";
+          p = "push";
+          a = "add";
+          aa = "add -A";
+          au = "add -u";
+          s = "status";
+          bc = "checkout -b";
+        };
       };
       git-credential-oauth.enable = true; # authentication manager
     };

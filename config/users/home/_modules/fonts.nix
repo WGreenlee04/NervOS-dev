@@ -12,6 +12,7 @@ in
     fonts.fontconfig.enable = true; # allow font package discovery from home.packages
 
     home.packages = [
+      # font packages
       pkgs.fira-code
       pkgs.fira-code-symbols
       pkgs.font-awesome
