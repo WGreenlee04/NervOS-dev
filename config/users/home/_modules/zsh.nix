@@ -15,13 +15,10 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       history.path = "$HOME/.cache/zsh_history";
-      shellAliases = {
-        ll = "ls -la";
-      };
       oh-my-zsh = {
         # zsh plugin manager
         enable = true;
-        plugins = [ "git" ];
+        plugins = [ "git" "copyfile" ];
       };
     };
   };

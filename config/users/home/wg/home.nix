@@ -23,7 +23,7 @@ in
     git.enable = true;
     hyprland = {
       enable = true;
-      wallpapers = assets.wallpapers;
+      wallpapers = wallpapers;
     };
     neovim.enable = true;
     starship.enable = true;
