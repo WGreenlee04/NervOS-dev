@@ -18,7 +18,7 @@ in
       oh-my-zsh = {
         # zsh plugin manager
         enable = true;
-        plugins = [ "git" "copyfile" ];
+        plugins = [ "git" "z" ];
       };
     };
   };
