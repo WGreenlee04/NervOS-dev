@@ -5,6 +5,8 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       flake-registry = "";
+      max-jobs = "auto";
+      auto-optimise-store = true;
     };
     channel.enable = false;
     gc = {
