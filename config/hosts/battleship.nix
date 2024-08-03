@@ -9,6 +9,7 @@
 
   modules.nvidia.enable = true;
   modules.steam.enable = true;
+  time.timeZone = "America/Louisville";
   networking.hostName = "battleship";
   system.stateVersion = "24.05";
 }
