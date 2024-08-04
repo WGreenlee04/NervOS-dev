@@ -10,12 +10,24 @@ let
   common = ../config/common.nix;
 in
 builtins.mapAttrs
-  (name: value: lib.nixosSystem {
+  (name: user-config: lib.nixosSystem {
     modules = [
       home-manager
       agenix
       common
-      value
+      user-config
+      {
+        # Flake specific common config
+        nix = {
+          registry.nixpkgs.flake = inputs.nixpkgs;
+          nixPath = [ "nixpkgs=flake:nixpkgs" ];
+          channel.enable = false;
+          settings = {
+            experimental-features = [ "nix-command" "flakes" ];
+            flake-registry = "";
+          };
+        };
+      }
     ];
   }
   )
