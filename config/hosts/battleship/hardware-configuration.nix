@@ -21,17 +21,23 @@
       options = [ "subvol=@" ];
     };
 
+  fileSystems."/boot" =
+    {
+      device = "/dev/disk/by-uuid/848C-520C";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
   fileSystems."/home" =
     {
       device = "/dev/disk/by-uuid/edaab221-98a7-47e4-861f-11203558c16b";
       fsType = "btrfs";
     };
 
-  fileSystems."/boot" =
+  fileSystems."/home/wg/Games" =
     {
-      device = "/dev/disk/by-uuid/848C-520C";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      device = "/dev/disk/by-uuid/2d6b7fd3-b06c-4f2b-a32c-20878f3b9f0e";
+      fsType = "btrfs";
     };
 
   swapDevices = [ ];
